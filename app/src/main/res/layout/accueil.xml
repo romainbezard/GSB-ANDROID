@@ -19,34 +19,33 @@
     <ImageView
         android:id="@+id/imageGSB"
         android:layout_width="match_parent"
-        android:layout_height="300px"
+        android:layout_height="150dp"
         android:src="@mipmap/gsb"
         android:layout_marginBottom="25px"
         />
 
     <Button
-        android:layout_width="350px"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:id="@+id/Btn_mesVisites"
         android:text="@string/mesVisites"
         android:layout_gravity="center"
-        android:layout_marginBottom="25px"
+        android:layout_marginBottom="15dp"
         />
     <Button
-        android:layout_width="350px"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:id="@+id/Btn_mesMedecins"
         android:text="@string/mesMedecins"
         android:layout_gravity="center"
-        android:layout_marginBottom="25px"
+        android:layout_marginBottom="15dp"
         />
     <Button
-        android:layout_width="350px"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:id="@+id/Btn_Deconnexion"
         android:text="@string/deconnexion"
         android:layout_gravity="center"
-        android:layout_marginBottom="25px"
         />
 
 </LinearLayout>

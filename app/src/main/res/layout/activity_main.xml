@@ -20,7 +20,7 @@
     <ImageView
         android:id="@+id/imageGSB"
         android:layout_width="match_parent"
-        android:layout_height="300px"
+        android:layout_height="150dp"
         app:srcCompat="@mipmap/gsb"
         />
 
@@ -30,8 +30,8 @@
         android:id="@+id/Txt_login"
         android:text="@string/login"
         android:textStyle="bold"
-        android:textSize="40px"
-        android:layout_marginLeft="15px"
+        android:textSize="20dp"
+        android:layout_marginLeft="7dp"
         />
 
     <EditText
@@ -42,8 +42,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="Identifiant"
-        android:layout_marginBottom="65px"
-        android:layout_marginLeft="15px"
+        android:layout_marginBottom="33dp"
+        android:layout_marginLeft="7dp"
         />
 
     <TextView
@@ -52,8 +52,8 @@
         android:id="@+id/Txt_mdp"
         android:text="@string/mdp"
         android:textStyle="bold"
-        android:textSize="40px"
-        android:layout_marginLeft="15px"
+        android:textSize="20dp"
+        android:layout_marginLeft="7dp"
         />
 
     <EditText
@@ -62,15 +62,15 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPassword"
-        android:layout_marginLeft="15px"
-        android:layout_marginBottom="65px"
+        android:layout_marginLeft="7dp"
+        android:layout_marginBottom="33dp"
         />
 
     <Button
         android:id="@+id/Btn_connexion"
-        android:layout_width="350px"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15px"
+        android:layout_marginLeft="7dp"
         android:elevation="0dp"
         android:text="@string/Connexion"
         android:textAppearance="@style/TextAppearance.AppCompat" />
