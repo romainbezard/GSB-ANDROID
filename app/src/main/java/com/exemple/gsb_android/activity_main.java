@@ -1,10 +1,14 @@
 package com.exemple.gsb_android;
 
 import android.app.Activity;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+
+import com.exemple.gsbrapports.LocalSQLiteOpenHelper;
 
 /**
  * Created by romain.bezard on 19/03/2018.
