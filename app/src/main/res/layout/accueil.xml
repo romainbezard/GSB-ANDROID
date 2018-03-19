@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/Titre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTitle"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/Accueil"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="42px"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageGSB"
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        android:src="@mipmap/gsb"
+        />
+
+    <Button
+        android:layout_width="350px"
+        android:layout_height="wrap_content"
+        android:id="@+id/Btn_mesVisites"
+        android:text="@string/mesVisites"
+
+        />
+    <Button
+        android:layout_width="350px"
+        android:layout_height="wrap_content"
+        android:id="@+id/Btn_mesMedecins"
+        android:text="@string/mesMedecins"
+        />
+    <Button
+        android:layout_width="350px"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

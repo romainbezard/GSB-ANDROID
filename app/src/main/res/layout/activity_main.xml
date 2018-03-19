@@ -1,13 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <TextView
+        android:id="@+id/Titre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTitle"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/Titre"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="36px"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageGSB"
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        app:srcCompat="@mipmap/gsb"
+        />
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/login"
-        android:text="Hello World !"
+        android:layout_height="wrap_content"
+        android:id="@+id/Txt_login"
+        android:text="@string/login"
+        android:textStyle="bold"
+        android:textSize="40px"
+        android:layout_marginLeft="15px"
         />
+
+    <EditText
+        android:id="@+id/Login"
+        style="@android:style/Widget.DeviceDefault.AutoCompleteTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Identifiant"
+        android:layout_marginBottom="65px"
+        android:layout_marginLeft="15px"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Txt_mdp"
+        android:text="@string/mdp"
+        android:textStyle="bold"
+        android:textSize="40px"
+        android:layout_marginLeft="15px"
+        />
+
+    <EditText
+        android:id="@+id/Mdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:layout_marginLeft="15px"
+        android:layout_marginBottom="65px"
+        />
+
+    <Button
+        android:id="@+id/Btn_connexion"
+        android:layout_width="350px"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15px"
+        android:elevation="0dp"
+        android:text="@string/Connexion"
+        android:textAppearance="@style/TextAppearance.AppCompat" />
+
 
 </LinearLayout>

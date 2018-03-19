@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">GSB-ANDROID</string>
+    <string name="Titre">Gestion des visites et des médecins</string>
+    <string name="login">Login : </string>
+    <string name="mdp">Mot de passe : </string>
+    <string name="Connexion">Connexion</string>
+    <string name="Accueil">Accueil</string>
+    <string name="mesVisites">Mes visites</string>
+    <string name="mesMedecins">Mes médecins</string>
 </resources>

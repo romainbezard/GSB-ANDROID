@@ -1,3 +1,5 @@
+package com.exemple.gsb_android;
+
 /**
  * Created by romain.bezard on 16/03/2018.
  */
