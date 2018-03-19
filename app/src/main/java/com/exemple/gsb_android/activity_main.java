@@ -2,6 +2,7 @@ package com.exemple.gsb_android;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -13,6 +14,7 @@ public class activity_main extends Activity {
 
     ImageView imageView;
     EditText login, mdp;
+    Button btnConnexion;
 
     @Override
     protected void onCreate(Bundle bundle){
@@ -21,4 +23,10 @@ public class activity_main extends Activity {
         imageView = (ImageView)findViewById(R.id.imageGSB);
         imageView.setImageResource(R.mipmap.gsb);
     }
+
+    private void btnConnexion_Click(){
+
+    }
+
+
 }

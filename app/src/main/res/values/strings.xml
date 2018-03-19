@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GSB-ANDROID</string>
+    <string name="app_name">GSB</string>
     <string name="Titre">Gestion des visites et des médecins</string>
     <string name="login">Login : </string>
     <string name="mdp">Mot de passe : </string>
