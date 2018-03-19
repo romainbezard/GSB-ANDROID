@@ -3,6 +3,7 @@
  */
 
 public class Fonction {
+    // Yolo
 
     //coralie
     String prenom = "RomainLeBG";
