@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.exemple.gsbrapports.LocalSQLiteOpenHelper;
 
 /**
  * Created by romain.bezard on 19/03/2018.
@@ -16,10 +19,22 @@ public class login extends Activity {
     EditText login, mdp;
     Button btnConnexion;
 
+    private TextView visiteurView;
+    private LocalSQLiteOpenHelper localSQLiteOpenHelper;
+
+
     @Override
     protected void onCreate(Bundle bundle){
         super.onCreate(bundle);
         setContentView(R.layout.login);
+
+
+        visiteurView = (TextView) findViewById(R.id.visiteurView);
+        localSQLiteOpenHelper = new LocalSQLiteOpenHelper( this );
+
+        localSQLiteOpenHelper.insertVisiteur("Pnt", "Coco", "pcoco", "aaaa", "12 avenue lorraine", "01000", "Bourg", 23/03/2018);
+
+        localSQLiteOpenHelper.close();
 
         // Instanciation de l'image
         imageView = findViewById(R.id.imageGSB);
@@ -31,6 +46,12 @@ public class login extends Activity {
 
         // Instanciation du bouton connexion
         btnConnexion = findViewById(R.id.Btn_connexion);
+
+
+
+
+
+
 
     }
 

@@ -3,6 +3,7 @@ package com.exemple.gsbrapports;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 /**
  * Created by jennifer.desgeorges on 19/03/2018.
@@ -19,10 +20,18 @@ public class LocalSQLiteOpenHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db){
-        String sqlFileTable = "CREATE TABLE famille(id TEXT PRIMARY KEY," +
-                "libelle TEXT);" +
-                "INSERT into famille values ('aaa', 'Antalgique en association')";
+        String sqlFileTable = "CREATE TABLE visiteur(id char PRIMARY KEY," +
+                "nom char(30)," +
+                "prenom char(30)," +
+                "login char(20)," +
+                "mdp char(20)," +
+                "adresse char(30)," +
+                "cp char(5)," +
+                "ville char(30)" +
+                "dateEmbauche int);";
+
         db.execSQL(sqlFileTable);
+        Log.i("DB", "onCreate invoked");
     }
 
     @Override
@@ -35,7 +44,9 @@ public class LocalSQLiteOpenHelper extends SQLiteOpenHelper{
             else if(versionToUpdate == 3){
 
             }
+
         }
+        Log.i("DB", "onUpgrade invoked");
     }
 
     public static void deleteDatabase(Context context){
@@ -43,7 +54,16 @@ public class LocalSQLiteOpenHelper extends SQLiteOpenHelper{
     }
 
     private void upgradeToVersion2(SQLiteDatabase db){
-        String sqlCommand = "ALTER TABLE famille ADD COLUMN test NUMERIC";
+        String sqlCommand = "ALTER TABLE visiteur ADD COLUMN test NUMERIC";
         db.execSQL(sqlCommand);
+    }
+
+
+    public void insertVisiteur( String nom, String prenom, String login, String mdp, String adresse, String cp, String ville, int dateEmbauche){
+        String sqlFileTable = "INSERT INTO visiteur(nom, prenom, login, mdp, adresse, cp, ville, dateEmbauche) VALUES ('"
+                + nom + "', " + prenom + "', " + login + "', " + mdp + "', " + adresse + "', " + cp + "', " + ville + "', " + dateEmbauche + "')";
+        this.getWritableDatabase().execSQL(sqlFileTable);
+
+        Log.i("DB", "insertVisiteur invoked");
     }
 }

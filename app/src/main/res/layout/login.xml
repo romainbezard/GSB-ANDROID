@@ -75,5 +75,11 @@
         android:text="@string/Connexion"
         android:textAppearance="@style/TextAppearance.AppCompat" />
 
+    <TextView
+        android:id="@+id/visiteurView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" " />
+
 
 </LinearLayout>
