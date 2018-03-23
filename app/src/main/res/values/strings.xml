@@ -13,6 +13,7 @@
     <string name="AjouterRapport">Ajouter un rapport</string>
     <string name="ChoisirRapport">Choisir un rapport</string>
     <string name="DateVisite">Date de la visite</string>
+    <string name="bonjour">Bonjour,</string>
     <string name="ChoisirDate">Choisir la date de la visite</string>
     <string name="AjoutRapport">Ajout d\'un rapport</string>
     <string name="RechercheMedecin">Rechercher le médecin</string>

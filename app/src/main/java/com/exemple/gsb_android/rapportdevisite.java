@@ -1,7 +1,9 @@
 package com.exemple.gsb_android;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -11,14 +13,34 @@ import android.widget.ImageView;
 
 public class rapportdevisite extends Activity {
 
-    Button btnModifierRapport, btnAjouterRapport;
-    ImageView imageView;
+    private Button btnModifierRapport, btnAjouterRapport;
+    private ImageView imageView;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle bundle){
         super.onCreate(bundle);
         setContentView(R.layout.rapportdevisite);
-        imageView = (ImageView)findViewById(R.id.imageGSB);
+
+        // Instancisation de l'image
+        imageView = findViewById(R.id.imageGSB);
         imageView.setImageResource(R.mipmap.gsb);
+
+        // Instanciation des boutons
+        btnAjouterRapport = findViewById(R.id.Btn_AjouterRapport);
+        btnModifierRapport = findViewById(R.id.Btn_ModifierRapport);
+
+        // Modifier Rapport
+        btnModifierRapport.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openModif();
+            }
+        });
+    }
+
+    public void openModif(){
+        intent = new Intent(this, modifierrapport.class);
+        startActivity(intent);
     }
 }
