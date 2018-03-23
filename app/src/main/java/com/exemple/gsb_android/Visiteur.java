@@ -6,7 +6,7 @@ import java.net.IDN;
  * Created by charles.morel on 23/03/2018.
  */
 
-public class classVisiteur {
+public class Visiteur {
     private String id;
     private String nom;
     private String prenom;
@@ -17,7 +17,7 @@ public class classVisiteur {
     private String ville;
     private char dateEmbauche;
 
-    public classVisiteur(String ID, String Nom, String Prenom,String Login, String Mdp, String Adresse, String Cp, String Ville, char DateEmbauche)
+    public Visiteur(String ID, String Nom, String Prenom, String Login, String Mdp, String Adresse, String Cp, String Ville, char DateEmbauche)
     {
         id = ID;
         nom = Nom;
