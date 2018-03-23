@@ -21,10 +21,6 @@ public class modifierrapport extends Activity {
         super.onCreate(bundle);
         setContentView(R.layout.modifierrapport);
 
-        // Instanciation de l'image
-        imageView = findViewById(R.id.imageGSB);
-        imageView.setImageResource(R.mipmap.gsb);
-
         // Instanciation bouton
         btnChoixDate = findViewById(R.id.Btn_ChoisirDate);
     }

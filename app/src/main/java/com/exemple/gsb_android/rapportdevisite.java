@@ -37,10 +37,23 @@ public class rapportdevisite extends Activity {
                 openModif();
             }
         });
+
+        // Ajouter Rapport
+        btnAjouterRapport.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openAjout();
+            }
+        });
     }
 
     public void openModif(){
         intent = new Intent(this, modifierrapport.class);
+        startActivity(intent);
+    }
+
+    public void openAjout(){
+        intent = new Intent(this, ajouterrapport.class);
         startActivity(intent);
     }
 }
