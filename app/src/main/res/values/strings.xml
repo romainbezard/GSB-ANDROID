@@ -8,4 +8,7 @@
     <string name="mesVisites">Mes visites</string>
     <string name="mesMedecins">Mes médecins</string>
     <string name="deconnexion">Déconnexion</string>
+    <string name="RapportDeVisite">Rapport de visite</string>
+    <string name="ModifierRapport">Modifier un rapport</string>
+    <string name="AjouterRapport">Ajouter un rapport</string>
 </resources>
