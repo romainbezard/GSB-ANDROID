@@ -13,4 +13,5 @@
     <string name="AjouterRapport">Ajouter un rapport</string>
     <string name="ChoisirRapport">Choisir un rapport</string>
     <string name="DateVisite">Date de la visite</string>
+    <string name="ChoisirDate">Choisir la date de la visite</string>
 </resources>

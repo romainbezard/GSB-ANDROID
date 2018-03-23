@@ -24,20 +24,24 @@
         />
 
     <Button
-        android:layout_width="175dp"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:id="@+id/Btn_ModifierRapport"
         android:text="@string/ModifierRapport"
         android:layout_gravity="center"
         android:layout_marginBottom="15dp"
+        android:layout_marginTop="25dp"
+        android:textSize="19dp"
         />
+
     <Button
-        android:layout_width="175dp"
+        android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:id="@+id/Btn_AjouterRapport"
         android:text="@string/AjouterRapport"
         android:layout_gravity="center"
         android:layout_marginBottom="15dp"
+        android:textSize="19dp"
         />
 
 </LinearLayout>
