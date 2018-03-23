@@ -10,13 +10,10 @@ import android.widget.ImageView;
 
 public class ajouterrapport extends Activity {
 
-    ImageView imageView;
 
     @Override
     protected void onCreate(Bundle bundle){
         super.onCreate(bundle);
         setContentView(R.layout.ajouterrapport);
-        imageView = (ImageView)findViewById(R.id.imageGSB);
-        imageView.setImageResource(R.mipmap.gsb);
     }
 }

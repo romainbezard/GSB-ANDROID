@@ -19,5 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".medecins"/>
+        <activity android:name=".majmedecin"/>
+        <activity android:name=".listerapports"/>
     </application>
 </manifest>

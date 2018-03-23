@@ -24,4 +24,14 @@
     <string name="DateRapport">Choisir la date de ce rapport</string>
     <string name="AfficheDate">Voici la date choisie</string>
     <string name="Medecin">Médecin</string>
+    <string name="VoirRapportsMedecin">Voir les rapports de visite du médecin</string>
+    <string name="VoirModifierInfos">Voir / modifier les informations du médecin</string>
+    <string name="MajMedecin">Mise à jour du médecin</string>
+    <string name="NomMedecin">Nom du médecin</string>
+    <string name="AdresseMedecin">Adresse</string>
+    <string name="TelMedecin">Téléphone</string>
+    <string name="SpecialiteMedecin">Spécialité complémentaire</string>
+    <string name="ValiderMaj">Valider</string>
+    <string name="ListeRapports">Liste des rapports</string>
+    <string name="AfficheColonnes">Colonnes à afficher...</string>
 </resources>
