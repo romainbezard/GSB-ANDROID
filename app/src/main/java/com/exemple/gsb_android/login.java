@@ -10,7 +10,7 @@ import android.widget.ImageView;
  * Created by romain.bezard on 19/03/2018.
  */
 
-public class activity_main extends Activity {
+public class login extends Activity {
 
     ImageView imageView;
     EditText login, mdp;
