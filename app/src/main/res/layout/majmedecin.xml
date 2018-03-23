@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/Titre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTitle"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/MajMedecin"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Txt_NomMedecin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/NomMedecin"
+        android:textSize="17dp" />
+
+    <TextView
+        android:id="@+id/Txt_AdresseMedecin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/AdresseMedecin"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/Edit_AdresseMedecin"
+        style="@android:style/Widget.DeviceDefault.AutoCompleteTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        />
+
+    <TextView
+        android:id="@+id/Txt_TelMedecin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/TelMedecin"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/Edit_TelMedecin"
+        style="@android:style/Widget.DeviceDefault.AutoCompleteTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        />
+
+    <TextView
+        android:id="@+id/Txt_SpecialiteMedecin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/SpecialiteMedecin"
+        android:textSize="17dp" />
+
+    <EditText
+        android:id="@+id/Edit_SpecialiteMedecin"
+        style="@android:style/Widget.DeviceDefault.AutoCompleteTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        />
+
+    <Button
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/Btn_ValiderMaj"
+        android:text="@string/ValiderMaj"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:textSize="19dp"
+        android:layout_marginTop="10dp"
+        />
+
+</LinearLayout>

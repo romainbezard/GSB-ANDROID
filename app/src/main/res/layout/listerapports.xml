@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:weightSum="1">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/Titre"
@@ -10,20 +9,20 @@
         android:layout_height="wrap_content"
         android:background="@color/colorTitle"
         android:fontFamily="sans-serif-smallcaps"
-        android:text="@string/ModifierRapport"
+        android:text="@string/ListeRapports"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="20dp"
         android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="match_parent"
+    <Button
+        android:layout_width="190dp"
         android:layout_height="wrap_content"
-        android:id="@+id/Txt_ChoisirRapport"
-        android:text="@string/ChoisirRapport"
+        android:id="@+id/Btn_AfficheColonnes"
+        android:text="@string/AfficheColonnes"
+        android:layout_gravity="right"
         android:textStyle="bold"
-        android:textSize="20dp"
-        android:layout_marginLeft="7dp"
+        android:textSize="17dp"
         android:layout_marginTop="20dp"
         />
 
@@ -34,8 +33,7 @@
         android:text="@string/ChoisirDate"
         android:layout_gravity="center"
         android:textSize="19dp"
-        android:layout_marginTop="10dp"
-        android:onClick="showDatePickerDialog"
+        android:layout_marginTop="20dp"
         />
 
     <TextView
@@ -48,7 +46,5 @@
         android:layout_marginLeft="7dp"
         android:layout_marginTop="10dp"
         />
-
-
 
 </LinearLayout>

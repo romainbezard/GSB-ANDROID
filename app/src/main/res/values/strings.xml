@@ -13,5 +13,26 @@
     <string name="AjouterRapport">Ajouter un rapport</string>
     <string name="ChoisirRapport">Choisir un rapport</string>
     <string name="DateVisite">Date de la visite</string>
+    <string name="bonjour">Bonjour,</string>
     <string name="ChoisirDate">Choisir la date de la visite</string>
+    <string name="AjoutRapport">Ajout d\'un rapport</string>
+    <string name="RechercheMedecin">Rechercher le médecin</string>
+    <string name="MotifRapport">Motif</string>
+    <string name="BilanRapport">Bilan</string>
+    <string name="MedicamentsOfferts">Médicaments offerts</string>
+    <string name="NouveauMedicament">Nouveau médicament</string>
+    <string name="Enregistrer">Enregistrer</string>
+    <string name="DateRapport">Choisir la date de ce rapport</string>
+    <string name="AfficheDate">Voici la date choisie</string>
+    <string name="Medecin">Médecin</string>
+    <string name="VoirRapportsMedecin">Voir les rapports de visite du médecin</string>
+    <string name="VoirModifierInfos">Voir / modifier les informations du médecin</string>
+    <string name="MajMedecin">Mise à jour du médecin</string>
+    <string name="NomMedecin">Nom du médecin</string>
+    <string name="AdresseMedecin">Adresse</string>
+    <string name="TelMedecin">Téléphone</string>
+    <string name="SpecialiteMedecin">Spécialité complémentaire</string>
+    <string name="ValiderMaj">Valider</string>
+    <string name="ListeRapports">Liste des rapports</string>
+    <string name="AfficheColonnes">Colonnes à afficher...</string>
 </resources>
