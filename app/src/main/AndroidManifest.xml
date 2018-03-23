@@ -11,11 +11,12 @@
         android:theme="@style/AppTheme">
         <activity android:name=".accueil"/>
         <activity android:name=".login"/>
-        <activity android:name=".rapportdevisite">
-        <intent-filter>
+        <activity android:name=".rapportdevisite"/>
+        <activity android:name=".modifierrapport">
+            <intent-filter>
             <action android:name="android.intent.action.MAIN"/>
             <category android:name="android.intent.category.LAUNCHER"/>
-        </intent-filter>
+            </intent-filter>
         </activity>
     </application>
 </manifest>

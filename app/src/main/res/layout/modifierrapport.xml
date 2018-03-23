@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/Titre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorTitle"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="@string/ModifierRapport"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageGSB"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@mipmap/gsb"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Txt_ChoisirRapport"
+        android:text="@string/ChoisirRapport"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:layout_marginLeft="7dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Txt_DateVisite"
+        android:text="@string/DateVisite"
+        android:textSize="17dp"
+        android:layout_marginLeft="7dp"
+        android:layout_marginTop="10dp"
+        />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="date" />
+
+</LinearLayout>
