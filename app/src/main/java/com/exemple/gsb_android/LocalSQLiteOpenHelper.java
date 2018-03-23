@@ -1,6 +1,7 @@
-package com.exemple.gsbrapports;
+package com.exemple.gsb_android;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -27,7 +28,7 @@ public class LocalSQLiteOpenHelper extends SQLiteOpenHelper{
                 "mdp char(20)," +
                 "adresse char(30)," +
                 "cp char(5)," +
-                "ville char(30)" +
+                "ville char(30)," +
                 "dateEmbauche varchar(10));";
 
         db.execSQL(sqlFileTable);
@@ -59,7 +60,8 @@ public class LocalSQLiteOpenHelper extends SQLiteOpenHelper{
     }
 
 
-    public void insertVisiteur( String nom, String prenom, String login, String mdp, String adresse, String cp, String ville, String dateEmbauche){
+    public void insertVisiteur( String id, String nom, String prenom, String login, String mdp, String adresse, String cp, String ville, String dateEmbauche){
+       id = id.replace("'", "''");
         nom = nom.replace("'", "''");
         prenom = prenom.replace("'", "''");
         login = login.replace("'", "''");
@@ -68,10 +70,30 @@ public class LocalSQLiteOpenHelper extends SQLiteOpenHelper{
         cp = cp.replace("'", "''");
         ville = ville.replace("'", "''");
         dateEmbauche = dateEmbauche.replace("'", "''");
-        String sqlFileTable = "INSERT INTO visiteur(nom, prenom, login, mdp, adresse, cp, ville, dateEmbauche) VALUES ('"
-                + nom + "', '" + prenom + "', '" + login + "', '" + mdp + "', '" + adresse + "', '" + cp + "', '" + ville + "', '" + dateEmbauche + "')";
+        String sqlFileTable = "INSERT INTO visiteur(id, nom, prenom, login, mdp, adresse, cp, ville, dateEmbauche) VALUES ('" + id + "', '"
+                + nom + "', '" + prenom + "', '" + login + "', '" + mdp + "', '" + adresse + "', '" + cp + "', '" + ville + "', '" + dateEmbauche + "');";
         this.getWritableDatabase().execSQL(sqlFileTable);
 
         Log.i("DB", "insertVisiteur invoked");
+    }
+
+
+
+
+
+    public boolean verifMdp(String login, String mdp){
+        boolean bool = true;
+        String req = "SELECT * FROM visiteur WHERE login = '" + login + "' and mdp = '" + mdp + "';";
+
+        Cursor cursor = this.getReadableDatabase().rawQuery(req, null);
+        cursor.moveToFirst();
+
+        if(cursor.isAfterLast()){
+            bool = false;
+        }
+
+        return bool;
+
+
     }
 }

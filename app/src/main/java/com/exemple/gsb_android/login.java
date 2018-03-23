@@ -64,6 +64,7 @@ public class login extends Activity {
             }
         });
 
+    // Quand on clique sur le bouton de connexion
 
     public void openAccueil(){
         String log = login.getText().toString();
@@ -78,5 +79,24 @@ public class login extends Activity {
         }else{
             errorLogin.setText("Identifiant et/ou mot de passe invalide");
         }
+
+        /*
+        boolean b = false;
+        LocalSQLiteOpenHelper localSQLiteOpenHelper = new LocalSQLiteOpenHelper( this );
+
+
+
+
+
+          b = localSQLiteOpenHelper.verifMdp(login.getText().toString(), mdp.getText().toString());
+
+
+        localSQLiteOpenHelper.close();
+
+        Toast.makeText(this, Boolean.toString(b), Toast.LENGTH_SHORT).show();
+
+        return b;
+        */
+
 
 }
