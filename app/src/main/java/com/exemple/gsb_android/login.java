@@ -1,7 +1,9 @@
 package com.exemple.gsb_android;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -15,10 +17,13 @@ import com.exemple.gsbrapports.LocalSQLiteOpenHelper;
 
 public class login extends Activity {
 
-    ImageView imageView;
-    EditText login, mdp;
-    Button btnConnexion;
+    public static final String EXTRA_LOGIN = "com.example.application.example.EXTRA_LOGIN";
+    public static final String EXTRA_MDP = "com.example.application.example.EXTRA_MDP";
 
+    private ImageView imageView;
+    private EditText login, mdp;
+    private Button btnConnexion;
+    private TextView errorLogin;
     private TextView visiteurView;
     private LocalSQLiteOpenHelper localSQLiteOpenHelper;
 
@@ -29,12 +34,7 @@ public class login extends Activity {
         setContentView(R.layout.login);
 
 
-        visiteurView = (TextView) findViewById(R.id.visiteurView);
-        localSQLiteOpenHelper = new LocalSQLiteOpenHelper( this );
 
-        localSQLiteOpenHelper.insertVisiteur("Pnt", "Coco", "pcoco", "aaaa", "12 avenue lorraine", "01000", "Bourg", 23/03/2018);
-
-        localSQLiteOpenHelper.close();
 
         // Instanciation de l'image
         imageView = findViewById(R.id.imageGSB);
@@ -44,22 +44,42 @@ public class login extends Activity {
         login = findViewById(R.id.Login);
         mdp = findViewById(R.id.Mdp);
 
+        // Instanciation ErrorLogin
+        errorLogin = findViewById(R.id.ErrorLogin);
+        visiteurView = findViewById(R.id.visiteurView);
+
         // Instanciation du bouton connexion
         btnConnexion = findViewById(R.id.Btn_connexion);
 
+        // Connexion
+        btnConnexion.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openAccueil();
+            }
+        });
 
+        /* Base de données
+        localSQLiteOpenHelper = new LocalSQLiteOpenHelper( this );
+        localSQLiteOpenHelper.insertVisiteur("Pnt", "Coco", "pcoco", "aaaa", "12 avenue lorraine", "01000", "Bourg", 23/03/2018);
+        localSQLiteOpenHelper.close();*/
+    }
 
+    public void openAccueil(){
+        String log = login.getText().toString();
+        String MDP = mdp.getText().toString();
+        Boolean connexion = true;
 
-
+        if(connexion){
+            Intent intent = new Intent(this, accueil.class);
+            intent.putExtra(EXTRA_LOGIN, log);
+            intent.putExtra(EXTRA_MDP, MDP);
+            startActivity(intent);
+        }else{
+            errorLogin.setText("Identifiant et/ou mot de passe invalide");
+        }
 
 
     }
-
-    // Quand on clique sur le bouton de connexion
-
-    private void btnConnexion_Click(){
-
-    }
-
 
 }

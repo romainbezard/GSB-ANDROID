@@ -35,6 +35,7 @@
         android:layout_gravity="center"
         android:textSize="19dp"
         android:layout_marginTop="10dp"
+        android:onClick="showDatePickerDialog"
         />
 
     <TextView
