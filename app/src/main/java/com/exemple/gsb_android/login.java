@@ -29,10 +29,10 @@ public class login extends Activity {
         setContentView(R.layout.login);
 
 
-        visiteurView = (TextView) findViewById(R.id.visiteurView);
+        visiteurView = findViewById(R.id.visiteurView);
         localSQLiteOpenHelper = new LocalSQLiteOpenHelper( this );
 
-        localSQLiteOpenHelper.insertVisiteur("Pnt", "Coco", "pcoco", "aaaa", "12 avenue lorraine", "01000", "Bourg", 23/03/2018);
+        localSQLiteOpenHelper.insertVisiteur("Pnt", "Coco", "pcoco", "aaaa", "12 avenue lorraine", "01000", "Bourg", "23/03/2018");
 
         localSQLiteOpenHelper.close();
 

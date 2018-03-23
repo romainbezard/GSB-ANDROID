@@ -28,7 +28,7 @@ public class LocalSQLiteOpenHelper extends SQLiteOpenHelper{
                 "adresse char(30)," +
                 "cp char(5)," +
                 "ville char(30)" +
-                "dateEmbauche int);";
+                "dateEmbauche varchar(10));";
 
         db.execSQL(sqlFileTable);
         Log.i("DB", "onCreate invoked");
@@ -59,9 +59,17 @@ public class LocalSQLiteOpenHelper extends SQLiteOpenHelper{
     }
 
 
-    public void insertVisiteur( String nom, String prenom, String login, String mdp, String adresse, String cp, String ville, int dateEmbauche){
+    public void insertVisiteur( String nom, String prenom, String login, String mdp, String adresse, String cp, String ville, String dateEmbauche){
+        nom = nom.replace("'", "''");
+        prenom = prenom.replace("'", "''");
+        login = login.replace("'", "''");
+        mdp = mdp.replace("'", "''");
+        adresse = adresse.replace("'", "''");
+        cp = cp.replace("'", "''");
+        ville = ville.replace("'", "''");
+        dateEmbauche = dateEmbauche.replace("'", "''");
         String sqlFileTable = "INSERT INTO visiteur(nom, prenom, login, mdp, adresse, cp, ville, dateEmbauche) VALUES ('"
-                + nom + "', " + prenom + "', " + login + "', " + mdp + "', " + adresse + "', " + cp + "', " + ville + "', " + dateEmbauche + "')";
+                + nom + "', '" + prenom + "', '" + login + "', '" + mdp + "', '" + adresse + "', '" + cp + "', '" + ville + "', '" + dateEmbauche + "')";
         this.getWritableDatabase().execSQL(sqlFileTable);
 
         Log.i("DB", "insertVisiteur invoked");
