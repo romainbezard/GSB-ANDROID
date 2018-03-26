@@ -11,8 +11,7 @@ import android.widget.TextView;
  * Created by romain.bezard on 23/03/2018.
  */
 
-public class DatePicker extends DialogFragment implements DatePickerDialog.OnDateSetListener{
-
+public class DatePickerAjout extends DialogFragment implements DatePickerDialog.OnDateSetListener{
     @Override
     public Dialog onCreateDialog(Bundle bundle){
         final Calendar c = Calendar.getInstance();
@@ -30,7 +29,7 @@ public class DatePicker extends DialogFragment implements DatePickerDialog.OnDat
     public void onDateSet(android.widget.DatePicker view, int annee, int mois, int jour){
         mois++;
         String month = monthIntToString(mois);
-        TextView dateVisite = getActivity().findViewById(R.id.Txt_DateVisite);
+        TextView dateVisite = getActivity().findViewById(R.id.Txt_DateRapport);
         dateVisite.setText(jour + " " + month + " " + annee);
     }
 
@@ -50,5 +49,4 @@ public class DatePicker extends DialogFragment implements DatePickerDialog.OnDat
         else if(mois == 12){month = "Decembre";}
         return month;
     }
-
 }

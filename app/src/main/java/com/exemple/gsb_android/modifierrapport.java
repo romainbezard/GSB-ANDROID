@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import java.util.Date;
+
 /**
  * Created by celine.duclos on 23/03/2018.
  */
@@ -21,10 +23,6 @@ public class modifierrapport extends Activity {
         super.onCreate(bundle);
         setContentView(R.layout.modifierrapport);
 
-        // Instanciation de l'image
-        imageView = findViewById(R.id.imageGSB);
-        imageView.setImageResource(R.mipmap.gsb);
-
         // Instanciation bouton
         btnChoixDate = findViewById(R.id.Btn_ChoisirDate);
     }
@@ -33,4 +31,5 @@ public class modifierrapport extends Activity {
         DialogFragment newFragment = new DatePicker();
         newFragment.show(getFragmentManager(), "datePicker");
     }
+
 }

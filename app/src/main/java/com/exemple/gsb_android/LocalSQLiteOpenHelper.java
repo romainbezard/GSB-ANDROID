@@ -136,13 +136,9 @@ public class LocalSQLiteOpenHelper extends SQLiteOpenHelper{
 
         Cursor cursor = this.getReadableDatabase().rawQuery(req, null);
         cursor.moveToFirst();
-
         if(cursor.isAfterLast()){
             bool = false;
         }
-
         return bool;
-
-
     }
 }
