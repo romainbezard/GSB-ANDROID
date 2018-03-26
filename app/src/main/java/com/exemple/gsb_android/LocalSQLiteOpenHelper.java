@@ -35,7 +35,7 @@ public class LocalSQLiteOpenHelper extends SQLiteOpenHelper{
                 "ville char(30)," +
                 "dateEmbauche date);";
 
-        // Famille
+        // Familles
         String sqlFileTable1 = "CREATE TABLE famille(id varchar PRIMARY KEY," +
                 "libelle varchar(30));";
 
