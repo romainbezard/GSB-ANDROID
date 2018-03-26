@@ -24,6 +24,7 @@ public class login extends Activity {
     public static final String EXTRA_LOGIN = "com.example.application.example.EXTRA_LOGIN";
     public static final String EXTRA_MDP = "com.example.application.example.EXTRA_MDP";
 
+
     private ImageView imageView;
     private EditText login, mdp;
     private Button btnConnexion;
