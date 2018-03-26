@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.exemple.gsbrapports.LocalSQLiteOpenHelper;
+import com.exemple.gsb_android.LocalSQLiteOpenHelper;
 
 /**
  * Created by romain.bezard on 19/03/2018.
@@ -29,15 +29,15 @@ public class login extends Activity {
 
 
     @Override
-    protected void onCreate(Bundle bundle){
+    protected void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setContentView(R.layout.login);
 
 
         visiteurView = findViewById(R.id.visiteurView);
-        localSQLiteOpenHelper = new LocalSQLiteOpenHelper( this );
+        localSQLiteOpenHelper = new LocalSQLiteOpenHelper(this);
 
-        localSQLiteOpenHelper.insertVisiteur("Pnt", "Coco", "pcoco", "aaaa", "12 avenue lorraine", "01000", "Bourg", "23/03/2018");
+        //localSQLiteOpenHelper.insertVisiteur("Pnt", "Coco", "pcoco", "aaaa", "12 avenue lorraine", "01000", "Bourg", "23/03/2018");
 
         localSQLiteOpenHelper.close();
 
@@ -57,12 +57,13 @@ public class login extends Activity {
         btnConnexion = findViewById(R.id.Btn_connexion);
 
         // Connexion
-        btnConnexion.setOnClickListener(new View.OnClickListener(){
+        btnConnexion.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v){
+            public void onClick(View v) {
                 openAccueil();
             }
         });
+    }
 
     // Quand on clique sur le bouton de connexion
 
@@ -99,4 +100,4 @@ public class login extends Activity {
         */
 
 
-}
+}}
