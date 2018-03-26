@@ -6,6 +6,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.Date;
+
 /**
  * Created by jennifer.desgeorges on 19/03/2018.
  */
@@ -21,6 +23,8 @@ public class LocalSQLiteOpenHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db){
+
+        // Visiteur
         String sqlFileTable = "CREATE TABLE visiteur(id char PRIMARY KEY," +
                 "nom char(30)," +
                 "prenom char(30)," +
@@ -29,9 +33,54 @@ public class LocalSQLiteOpenHelper extends SQLiteOpenHelper{
                 "adresse char(30)," +
                 "cp char(5)," +
                 "ville char(30)," +
-                "dateEmbauche varchar(10));";
+                "dateEmbauche date);";
+
+        // Famille
+        String sqlFileTable1 = "CREATE TABLE famille(id varchar PRIMARY KEY," +
+                "libelle varchar(30));";
+
+        // Medicaments
+        String sqlFileTable2 = "CREATE TABLE medicament(id varchar PRIMARY KEY," +
+                "nomCommercial varchar(80)," +
+                "idFamille varchar(10)," +
+                "composition varchar(100)," +
+                "effets varchar(100)," +
+                "contreIndications varchar(100)," +
+                "FOREIGN KEY(idFamille) REFERENCES famille(id))";
+
+        // Offrir
+        String sqlFileTable3 = "CREATE TABLE offrir(idRapport int PRIMARY KEY," +
+                "idMedicament varchar(30) PRIMARY KEY," +
+                "quantite int(2)," +
+                "FOREIGN KEY (idMedicament) REFERENCES medicament(id))";
+
+        //Medecin
+        String sqlFileTable4 = "CREATE TABLE medecin(id int(11) PRIMARY KEY," +
+                "nom varchar(30)," +
+                "prenom varchar(30)," +
+                "adresse varchar(80)," +
+                "tel varchar(15)," +
+                "specialiteComplementaire varchar(50)," +
+                "departement int(11))";
+
+        // Rapport
+        String sqlFileTable5 = "CREARE TABLE rapport(id int(11) PRIMARY KEY," +
+                "date date," +
+                "motif varchar(100)," +
+                "bilan varchar(100)," +
+                "idVisiteur char(4)," +
+                "idMedecin int(11)," +
+                "FOREIGN KEY (idVisiteur) REFERENCES visiteur(id)," +
+                "FOREIGN KEY (idMedecin) REFERENCES medecin(id))";
+
+
 
         db.execSQL(sqlFileTable);
+        db.execSQL(sqlFileTable1);
+        db.execSQL(sqlFileTable2);
+        db.execSQL(sqlFileTable3);
+        db.execSQL(sqlFileTable4);
+        db.execSQL(sqlFileTable5);
         Log.i("DB", "onCreate invoked");
     }
 
@@ -60,7 +109,7 @@ public class LocalSQLiteOpenHelper extends SQLiteOpenHelper{
     }
 
 
-    public void insertVisiteur( String id, String nom, String prenom, String login, String mdp, String adresse, String cp, String ville, String dateEmbauche){
+    public void insertVisiteur(String id, String nom, String prenom, String login, String mdp, String adresse, String cp, String ville, Date dateEmbauche){
        id = id.replace("'", "''");
         nom = nom.replace("'", "''");
         prenom = prenom.replace("'", "''");
@@ -69,7 +118,7 @@ public class LocalSQLiteOpenHelper extends SQLiteOpenHelper{
         adresse = adresse.replace("'", "''");
         cp = cp.replace("'", "''");
         ville = ville.replace("'", "''");
-        dateEmbauche = dateEmbauche.replace("'", "''");
+
         String sqlFileTable = "INSERT INTO visiteur(id, nom, prenom, login, mdp, adresse, cp, ville, dateEmbauche) VALUES ('" + id + "', '"
                 + nom + "', '" + prenom + "', '" + login + "', '" + mdp + "', '" + adresse + "', '" + cp + "', '" + ville + "', '" + dateEmbauche + "');";
         this.getWritableDatabase().execSQL(sqlFileTable);
