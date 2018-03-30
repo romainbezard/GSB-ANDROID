@@ -59,6 +59,14 @@ public class accueil extends Activity{
                 openVisite();
             }
         });
+
+        // Medecin
+        btnMesMedecins.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                openMedecin();
+            }
+        });
     }
 
     public void openLogin(){
@@ -68,6 +76,11 @@ public class accueil extends Activity{
 
     public void openVisite(){
         intent = new Intent(this, rapportdevisite.class);
+        startActivity(intent);
+    }
+
+    public void openMedecin(){
+        intent = new Intent(this, medecins.class);
         startActivity(intent);
     }
 }

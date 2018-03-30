@@ -141,4 +141,8 @@ public class LocalSQLiteOpenHelper extends SQLiteOpenHelper{
         }
         return bool;
     }
+
+    public Visiteur selectVisiteur(String login, String mdp){
+        return null;
+    }
 }

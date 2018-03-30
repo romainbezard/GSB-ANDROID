@@ -22,5 +22,6 @@
         <activity android:name=".medecins"/>
         <activity android:name=".majmedecin"/>
         <activity android:name=".listerapports"/>
+        <activity android:name=".PopAddMedoc"/>
     </application>
 </manifest>

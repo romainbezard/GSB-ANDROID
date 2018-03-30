@@ -50,5 +50,4 @@ public class DatePicker extends DialogFragment implements DatePickerDialog.OnDat
         else if(mois == 12){month = "Decembre";}
         return month;
     }
-
 }

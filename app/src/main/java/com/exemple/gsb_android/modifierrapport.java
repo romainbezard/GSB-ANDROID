@@ -14,8 +14,7 @@ import java.util.Date;
  */
 
 public class modifierrapport extends Activity {
-    
-    private ImageView imageView;
+
     private Button btnChoixDate;
 
     @Override

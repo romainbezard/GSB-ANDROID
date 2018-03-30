@@ -24,13 +24,13 @@ public class login extends Activity {
     public static final String EXTRA_LOGIN = "com.example.application.example.EXTRA_LOGIN";
     public static final String EXTRA_MDP = "com.example.application.example.EXTRA_MDP";
 
-
     private ImageView imageView;
     private EditText login, mdp;
     private Button btnConnexion;
     private TextView errorLogin;
     private TextView visiteurView;
     private LocalSQLiteOpenHelper localSQLiteOpenHelper;
+    private Visiteur visiteur;
 
 
     @Override
@@ -38,13 +38,6 @@ public class login extends Activity {
         super.onCreate(bundle);
         setContentView(R.layout.login);
 
-
-        visiteurView = findViewById(R.id.visiteurView);
-        localSQLiteOpenHelper = new LocalSQLiteOpenHelper(this);
-
-        //localSQLiteOpenHelper.insertVisiteur("Pnt", "Coco", "pcoco", "aaaa", "12 avenue lorraine", "01000", "Bourg", "23/03/2018");
-
-        localSQLiteOpenHelper.close();
 
         // Instanciation de l'image
         imageView = findViewById(R.id.imageGSB);
@@ -61,6 +54,11 @@ public class login extends Activity {
         // Instanciation du bouton connexion
         btnConnexion = findViewById(R.id.Btn_connexion);
 
+        // Instanciation de la BDD
+        localSQLiteOpenHelper = new LocalSQLiteOpenHelper(this);
+        //localSQLiteOpenHelper.insertVisiteur("a132","Pnt", "Coco", "pcoco", "aaaa", "12 avenue lorraine", "01000", "Bourg", "23/03/2018");
+        localSQLiteOpenHelper.close();
+
         // Connexion
         btnConnexion.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,37 +70,21 @@ public class login extends Activity {
 
     // Quand on clique sur le bouton de connexion
 
-    public void openAccueil(){
+    public void openAccueil() {
         String log = login.getText().toString();
         String MDP = mdp.getText().toString();
-        Boolean connexion = true;
+        Boolean connexion;
+        localSQLiteOpenHelper = new LocalSQLiteOpenHelper(this);
+        connexion = localSQLiteOpenHelper.verifMdp(login.getText().toString(), mdp.getText().toString());
+        localSQLiteOpenHelper.close();
 
-        if(connexion){
+        if (connexion) {
             Intent intent = new Intent(this, accueil.class);
             intent.putExtra(EXTRA_LOGIN, log);
             intent.putExtra(EXTRA_MDP, MDP);
             startActivity(intent);
-        }else{
+        } else {
             errorLogin.setText("Identifiant et/ou mot de passe invalide");
         }
-
-        /*
-        boolean b = false;
-        LocalSQLiteOpenHelper localSQLiteOpenHelper = new LocalSQLiteOpenHelper( this );
-
-
-
-
-
-          b = localSQLiteOpenHelper.verifMdp(login.getText().toString(), mdp.getText().toString());
-
-
-        localSQLiteOpenHelper.close();
-
-        Toast.makeText(this, Boolean.toString(b), Toast.LENGTH_SHORT).show();
-
-        return b;
-        */
-
-
-}}
+    }
+}
