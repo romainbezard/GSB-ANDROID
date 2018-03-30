@@ -3,6 +3,7 @@ package com.exemple.gsb_android;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,14 +16,18 @@ import android.widget.TextView;
 
 import com.exemple.gsb_android.LocalSQLiteOpenHelper;
 
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
 /**
  * Created by romain.bezard on 19/03/2018.
  */
 
 public class login extends Activity {
 
-    public static final String EXTRA_LOGIN = "com.example.application.example.EXTRA_LOGIN";
-    public static final String EXTRA_MDP = "com.example.application.example.EXTRA_MDP";
+    public static final String EXTRA_VISITEUR = "com.example.application.example.EXTRA_VISITEUR";
+
 
     private ImageView imageView;
     private EditText login, mdp;
@@ -75,14 +80,16 @@ public class login extends Activity {
         String MDP = mdp.getText().toString();
         Boolean connexion;
         localSQLiteOpenHelper = new LocalSQLiteOpenHelper(this);
-        connexion = localSQLiteOpenHelper.verifMdp(login.getText().toString(), mdp.getText().toString());
+        connexion = localSQLiteOpenHelper.verifMdp(log, MDP);
         localSQLiteOpenHelper.close();
 
         if (connexion) {
-            Intent intent = new Intent(this, accueil.class);
-            intent.putExtra(EXTRA_LOGIN, log);
-            intent.putExtra(EXTRA_MDP, MDP);
-            startActivity(intent);
+            visiteur = localSQLiteOpenHelper.selectVisiteur(log,MDP);
+           if(visiteur != null){
+                Intent intent = new Intent(this, accueil.class);
+                intent.putExtra(EXTRA_VISITEUR,visiteur);
+                startActivity(intent);
+           }
         } else {
             errorLogin.setText("Identifiant et/ou mot de passe invalide");
         }

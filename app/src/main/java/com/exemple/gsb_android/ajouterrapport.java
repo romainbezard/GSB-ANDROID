@@ -18,8 +18,12 @@ import android.widget.TextView;
 
 public class ajouterrapport extends Activity {
 
+    public static final String EXTRA_VISITEUR = "com.example.application.example.EXTRA_VISITEUR";
+
     private EditText rechercheMedecin, medecin, motifRapport, bilanRapport;
     private Button btnDateRapport, btnNewMedicament, btnEnregistrer;
+    private Intent intent;
+    private Visiteur visiteur;
 
     @Override
     protected void onCreate(Bundle bundle){

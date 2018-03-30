@@ -143,6 +143,15 @@ public class LocalSQLiteOpenHelper extends SQLiteOpenHelper{
     }
 
     public Visiteur selectVisiteur(String login, String mdp){
-        return null;
+        String req = "Select id, nom, prenom from visiteur where login='" + login + "' and mdp='" + mdp + "'";
+        String id = null, nom = null, prenom = null;
+        Cursor cursor = this.getReadableDatabase().rawQuery(req, null);
+        while(cursor.moveToNext()){
+            id = cursor.getString(0);
+            nom = cursor.getString(1);
+            prenom = cursor.getString(2);
+        }
+        Visiteur v = new Visiteur(id, nom, prenom);
+        return v;
     }
 }

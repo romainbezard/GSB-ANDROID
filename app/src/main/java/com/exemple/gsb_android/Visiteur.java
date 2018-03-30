@@ -1,12 +1,11 @@
 package com.exemple.gsb_android;
-
-import java.net.IDN;
+import java.io.Serializable;
 
 /**
  * Created by charles.morel on 23/03/2018.
  */
 
-public class Visiteur {
+public class Visiteur implements Serializable{
     private String id;
     private String nom;
     private String prenom;
@@ -18,15 +17,6 @@ public class Visiteur {
         prenom = Prenom;
     }
 
-    // Set
-
-    public void setNom(String ID){
-        id = ID;
-    }
-
-    public void setPrenom(String Prenom){
-        prenom = Prenom;
-    }
 
     // Get
     public String getId(){

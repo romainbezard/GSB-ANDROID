@@ -13,9 +13,12 @@ import android.widget.ImageView;
 
 public class rapportdevisite extends Activity {
 
+    public static final String EXTRA_VISITEUR = "com.example.application.example.EXTRA_VISITEUR";
+
     private Button btnModifierRapport, btnAjouterRapport;
     private ImageView imageView;
     private Intent intent;
+    private Visiteur Vis;
 
     @Override
     protected void onCreate(Bundle bundle){
@@ -29,6 +32,10 @@ public class rapportdevisite extends Activity {
         // Instanciation des boutons
         btnAjouterRapport = findViewById(R.id.Btn_AjouterRapport);
         btnModifierRapport = findViewById(R.id.Btn_ModifierRapport);
+
+        // Instanciation du visiteur
+        intent = getIntent();
+        Vis = (Visiteur)intent.getSerializableExtra(accueil.EXTRA_VISITEUR);
 
         // Modifier Rapport
         btnModifierRapport.setOnClickListener(new View.OnClickListener(){
@@ -49,11 +56,13 @@ public class rapportdevisite extends Activity {
 
     public void openModif(){
         intent = new Intent(this, modifierrapport.class);
+        intent.putExtra(EXTRA_VISITEUR, Vis);
         startActivity(intent);
     }
 
     public void openAjout(){
         intent = new Intent(this, ajouterrapport.class);
+        intent.putExtra(EXTRA_VISITEUR, Vis);
         startActivity(intent);
     }
 }

@@ -14,11 +14,14 @@ import android.widget.TextView;
 
 public class accueil extends Activity{
 
+    public static final String EXTRA_VISITEUR = "com.example.application.example.EXTRA_VISITEUR";
+
     private Button btnMesVisites, btnMesMedecins, btnDeconnexion;
     private TextView txtBonjour;
     private ImageView imageView;
     private String Login, mdp;
     private Intent intent;
+    private Visiteur Vis = null;
 
     @Override
     protected void onCreate(Bundle bundle){
@@ -39,10 +42,9 @@ public class accueil extends Activity{
 
         // Instanciation des variables
         intent = getIntent();
-        Login = intent.getStringExtra(login.EXTRA_LOGIN);
-
+        Vis = (Visiteur) intent.getSerializableExtra(login.EXTRA_VISITEUR);
         // Bonjour, nom prenom
-        txtBonjour.setText(txtBonjour.getText() + " " + Login);
+        txtBonjour.setText(txtBonjour.getText() + " " + Vis.getNom() + " " + Vis.getPrenom());
 
         // Deconnexion
         btnDeconnexion.setOnClickListener(new View.OnClickListener(){
@@ -76,6 +78,7 @@ public class accueil extends Activity{
 
     public void openVisite(){
         intent = new Intent(this, rapportdevisite.class);
+        intent.putExtra(EXTRA_VISITEUR, Vis);
         startActivity(intent);
     }
 

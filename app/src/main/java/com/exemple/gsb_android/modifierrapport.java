@@ -2,6 +2,7 @@ package com.exemple.gsb_android;
 
 import android.app.Activity;
 import android.app.DialogFragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,8 @@ import java.util.Date;
 public class modifierrapport extends Activity {
 
     private Button btnChoixDate;
+    private Visiteur Vis;
+    private Intent intent;
 
     @Override
     protected void onCreate(Bundle bundle){
@@ -24,6 +27,10 @@ public class modifierrapport extends Activity {
 
         // Instanciation bouton
         btnChoixDate = findViewById(R.id.Btn_ChoisirDate);
+
+        // Instanciation du visiteur
+        intent = getIntent();
+        Vis = (Visiteur)intent.getSerializableExtra(accueil.EXTRA_VISITEUR);
     }
 
     public void showDatePickerDialog(View v){
