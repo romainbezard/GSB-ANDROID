@@ -10,24 +10,12 @@ public class Visiteur {
     private String id;
     private String nom;
     private String prenom;
-    private String login;
-    private String mdp;
-    private String adresse;
-    private String cp;
-    private String ville;
-    private char dateEmbauche;
 
-    public Visiteur(String ID, String Nom, String Prenom, String Login, String Mdp, String Adresse, String Cp, String Ville, char DateEmbauche)
+    public Visiteur(String ID, String Nom, String Prenom)
     {
         id = ID;
         nom = Nom;
         prenom = Prenom;
-        login = Login;
-        mdp = Mdp;
-        adresse = Adresse;
-        cp = Cp;
-        ville = Ville;
-        dateEmbauche = DateEmbauche;
     }
 
     // Set
@@ -38,18 +26,6 @@ public class Visiteur {
 
     public void setPrenom(String Prenom){
         prenom = Prenom;
-    }
-
-    public void setAdresse(String Adresse){
-        adresse = Adresse;
-    }
-
-    public void setCp(String CP){
-        cp = CP;
-    }
-
-    public void setVille(String Ville){
-        ville= Ville;
     }
 
     // Get
@@ -63,17 +39,5 @@ public class Visiteur {
 
     public String getPrenom(){
         return prenom;
-    }
-
-    public String getAdresse(){
-        return adresse;
-    }
-
-    public String getVille(){
-        return ville;
-    }
-
-    public String getCp(){
-        return cp;
     }
 }
